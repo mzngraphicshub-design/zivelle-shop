@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0868e8">
+  <meta name="description" content="Shop stickers, stationery, cosmetics, fashion, bags, accessories and everyday lifestyle finds at Zivelle.">
+  <title>Zivelle — Little joys, Every day.</title>
+
+  <link rel="icon" href="assets/zivelle-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="announcement">
+    💙 Little joys, Every day. &nbsp; | &nbsp; Welcome to Zivelle
+  </div>
+
+  <header class="header">
+    <a class="brand" href="#home" aria-label="Zivelle home">
+      <img src="assets/zivelle-logo.png" alt="Zivelle logo">
+      <span>
+        <b>Zivelle</b>
+        <small>Little joys, Every day.</small>
+      </span>
+    </a>
+
+    <form class="search" id="searchForm">
+      <input id="searchInput" type="search" placeholder="Search your favourite finds…" aria-label="Search products">
+      <button aria-label="Search">⌕</button>
+    </form>
+
+    <div class="header-actions">
+      <a class="nav-link" href="#categories">Categories</a>
+      <button class="cart-button" id="openCart" aria-label="Open shopping cart">
+        🛍️ <span>Cart</span> <b id="cartCount">0</b>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#categories">Categories</a>
+    <a href="#products">Shop all</a>
+    <a href="#about">About us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <img class="hero-art" src="assets/zivelle-shop-banner.png" alt="Zivelle lifestyle shop banner">
+
+      <div class="hero-copy">
+        <span class="eyebrow">A LITTLE JOY, JUST FOR YOU</span>
+        <h1>Find your kind<br>of <em>happy.</em></h1>
+
+        <p>Everyday essentials, cute finds and little things that make you smile.</p>
+
+        <div class="hero-buttons">
+          <a class="button button-light" href="#products">
+            Shop the collection <span>→</span>
+          </a>
+          <a class="text-button" href="#categories">Explore categories ↓</a>
+        </div>
+
+        <div class="hero-perks">
+          <span>♡ Thoughtful finds</span>
+          <span>✦ Everyday style</span>
+          <span>☻ Made for you</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-row" aria-label="Shop highlights">
+      <div>
+        <span>✿</span>
+        <p><b>Lovely Finds</b><small>Little things, big joy</small></p>
+      </div>
+
+      <div>
+        <span>♡</span>
+        <p><b>Easy Ordering</b><small>Simple and convenient</small></p>
+      </div>
+
+      <div>
+        <span>↗</span>
+        <p><b>Friendly Support</b><small>Here to help you</small></p>
+      </div>
+
+      <div>
+        <span>▣</span>
+        <p><b>Careful Packing</b><small>Every order matters</small></p>
+      </div>
+    </section>
+
+    <section class="section categories-section" id="categories">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow blue">FIND YOUR FAVOURITE</span>
+          <h2>Shop by category</h2>
+          <p>Little discoveries for every part of your day.</p>
+        </div>
+
+        <a href="#products" class="under-link">View all products ↗</a>
+      </div>
+
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="section products-section" id="products">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow blue">THE ZIVELLE EDIT</span>
+          <h2>Little things to love</h2>
+          <p>Browse the collection and find your next favourite.</p>
+        </div>
+
+        <div class="product-controls">
+          <select id="categoryFilter" aria-label="Filter by category">
+            <option value="all">All categories</option>
+          </select>
+
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+            <option value="name">Name: A–Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="results-note" id="resultsNote"></div>
+      <div class="product-grid" id="productGrid"></div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span>🔎</span>
+        <h3>No products found</h3>
+        <p>Try another search or category.</p>
+        <button class="button button-blue" id="clearFilters">Clear filters</button>
+      </div>
+    </section>
+
+    <section class="feature-banner">
+      <div class="feature-icon">♡</div>
+
+      <div>
+        <span class="eyebrow">YOUR EVERYDAY HAPPY PLACE</span>
+        <h2>Small things. <em>Big smiles.</em></h2>
+        <p>From cute stationery to everyday style, discover little joys worth sharing.</p>
+      </div>
+
+      <a href="#products" class="button button-white">Find your joy →</a>
+
+      <span class="feature-spark spark-one">✦</span>
+      <span class="feature-spark spark-two">✿</span>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="about-image">
+        <img src="assets/zivelle-merch-mockup.png" alt="Zivelle branded lifestyle merchandise">
+      </div>
+
+      <div class="about-copy">
+        <span class="eyebrow blue">A LITTLE ABOUT US</span>
+        <h2>More than shopping.<br><em>It's a little joy.</em></h2>
+
+        <p>
+          At Zivelle, we believe everyday life deserves a little extra colour.
+          We're bringing together cute finds, useful essentials and lifestyle
+          favourites in one happy place.
+        </p>
+
+        <p>
+          From stickers and stationery to cosmetics, fashion, bags and
+          accessories—there's a little something for your everyday.
+        </p>
+
+        <a href="#products" class="under-link">Explore Zivelle ↗</a>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div>
+        <span class="eyebrow">STAY IN THE LOOP</span>
+        <h2>A little joy in your inbox.</h2>
+        <p>Get in touch to hear about new arrivals and shop updates.</p>
+      </div>
+
+      <a class="button button-white" href="#contact">Let's connect →</a>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div>
+        <span class="eyebrow blue">WE'RE HERE FOR YOU</span>
+        <h2>Let's talk, Zivelle style.</h2>
+        <p>Questions about a product or your order? Reach out—we'd love to help.</p>
+      </div>
+
+      <div class="contact-cards">
+        <a href="#" id="whatsappContact" class="contact-card">
+          <span>☏</span>
+          <div>
+            <b>WhatsApp us</b>
+            <small>Ask a question or place an order</small>
+          </div>
+          <strong>↗</strong>
+        </a>
+
+        <a href="mailto:hello@zivelle.com" class="contact-card">
+          <span>✉</span>
+          <div>
+            <b>Email us</b>
+            <small>hello@zivelle.com — replace with your email</small>
+          </div>
+          <strong>↗</strong>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <a class="brand footer-brand" href="#home">
+        <img src="assets/zivelle-logo.png" alt="">
+        <span>
+          <b>Zivelle</b>
+          <small>Little joys, Every day.</small>
+        </span>
+      </a>
+
+      <p>Little joys for your everyday life. Find your next favourite with Zivelle. 💙</p>
+
+      <div class="social-links">
+        <a href="#" aria-label="Facebook" id="facebookLink">f</a>
+        <a href="#contact" aria-label="Contact">✉</a>
+        <a href="#products" aria-label="Shop">♡</a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <b>Explore</b>
+      <a href="#products">Shop all</a>
+      <a href="#categories">Categories</a>
+      <a href="#about">Our story</a>
+    </div>
+
+    <div class="footer-links">
+      <b>Customer care</b>
+      <a href="#contact">Contact us</a>
+      <a href="#faq">FAQs</a>
+      <a href="#policies">Delivery & returns</a>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Zivelle. All little joys reserved.</span>
+      <span>Made with ♡ for everyday happiness.</span>
+    </div>
+  </footer>
+
+  <section class="faq-policy section" id="faq">
+    <details>
+      <summary>How do I place an order?</summary>
+      <p>Add your favourite products to the cart, fill in your details, then send the order through WhatsApp.</p>
+    </details>
+
+    <details>
+      <summary>How can I confirm product availability?</summary>
+      <p>Message us on WhatsApp before ordering if you need to confirm size, colour or stock.</p>
+    </details>
+
+    <details id="policies">
+      <summary>What about delivery and returns?</summary>
+      <p>Delivery fees, delivery time and return terms should be confirmed with the shop before purchase. Add your final policy here before launching.</p>
+    </details>
+  </section>
+
+  <!-- Shopping Cart -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-head">
+      <div>
+        <span class="eyebrow blue">YOUR BAG</span>
+        <h2>Shopping cart <span id="cartTitleCount">(0)</span></h2>
+      </div>
+
+      <button id="closeCart" class="icon-button" aria-label="Close cart">✕</button>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div class="cart-bottom">
+      <div class="subtotal">
+        <span>Subtotal</span>
+        <b id="cartSubtotal">৳0</b>
+      </div>
+
+      <small>Delivery fee, if any, will be confirmed before dispatch.</small>
+
+      <button class="button button-blue full-width" id="checkoutButton">
+        Continue to checkout →
+      </button>
+
+      <button class="continue-shopping" id="continueShopping">Continue shopping</button>
+    </div>
+  </aside>
+
+  <!-- Checkout Form -->
+  <div class="modal-backdrop" id="checkoutModal" aria-hidden="true">
+    <div class="checkout-modal">
+      <div class="modal-head">
+        <div>
+          <span class="eyebrow blue">ALMOST YOURS</span>
+          <h2>Checkout details</h2>
+        </div>
+
+        <button class="icon-button" id="closeCheckout" aria-label="Close checkout">✕</button>
+      </div>
+
+      <p class="modal-intro">Add your details. We'll prepare your order message for WhatsApp.</p>
+
+      <form id="checkoutForm">
+        <label>
+          Full name
+          <input name="name" required autocomplete="name" placeholder="Your name">
+        </label>
+
+        <label>
+          Mobile number
+          <input
+            name="phone"
+            type="tel"
+            required
+            autocomplete="tel"
+            placeholder="01XXXXXXXXX"
+            pattern="[0-9+ ()-]{8,18}"
+          >
+        </label>
+
+        <label>
+          Delivery address
+          <textarea
+            name="address"
+            required
+            autocomplete="street-address"
+            rows="3"
+            placeholder="House, road, area, district"
+          ></textarea>
+        </label>
+
+        <label>
+          Order note <small>(optional)</small>
+          <textarea name="note" rows="2" placeholder="Size, colour or other requests"></textarea>
+        </label>
+
+        <div class="checkout-total">
+          <span>Order subtotal</span>
+          <b id="checkoutTotal">৳0</b>
+        </div>
+
+        <button class="button button-blue full-width" type="submit">
+          Send order via WhatsApp ↗
+        </button>
+
+        <p class="form-note">Your order is not confirmed until the shop replies.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Zivelle Chatbot Demo -->
+  <button class="zivelle-chat-launch" id="chatLaunch" aria-label="Open Zivelle assistant">
+    💬 <span>Ask Zivelle</span>
+  </button>
+
+  <section class="zivelle-chat" id="zivelleChat" aria-label="Zivelle customer assistant" hidden>
+    <header class="zchat-head">
+      <div class="zchat-avatar">Z</div>
+
+      <div>
+        <b>Zivelle Assistant</b>
+        <small>Quick help • Usually replies instantly</small>
+      </div>
+
+      <button id="chatClose" aria-label="Close chat">×</button>
+    </header>
+
+    <div class="zchat-notice">
+      Hi there! 💙 I can help with products, prices, delivery and ordering.
+    </div>
+
+    <div class="zchat-messages" id="zchatMessages" aria-live="polite">
+      <div class="zchat-bubble bot">
+        Welcome to Zivelle! What would you like to know?
+      </div>
+    </div>
+
+    <div class="zchat-quick">
+      <button data-quick="What products do you sell?">Products</button>
+      <button data-quick="How do I order?">How to order</button>
+      <button data-quick="Tell me about delivery">Delivery</button>
+    </div>
+
+    <form id="zchatForm" class="zchat-form">
+      <input
+        id="zchatInput"
+        placeholder="Type your message…"
+        maxlength="500"
+        autocomplete="off"
+        required
+      >
+      <button aria-label="Send message">➤</button>
+    </form>
+
+    <div class="zchat-foot">
+      Automated demo assistant · Connect an AI API for live AI replies
+    </div>
+  </section>
+
+  <!-- Local Message & Reply Demo -->
+  <button class="zivelle-inbox-launch" id="inboxLaunch">
+    ✉ Message & Reply <span id="inboxUnread">0</span>
+  </button>
+
+  <section class="zivelle-inbox" id="zivelleInbox" hidden>
+    <header>
+      <b>Message Reply Center</b>
+      <button id="inboxClose" aria-label="Close inbox">×</button>
+    </header>
+
+    <p class="inbox-sub">
+      Customer messages on this browser are saved locally.
+      This is a demo inbox, not a live Facebook/Instagram inbox.
+    </p>
+
+    <div id="inboxList" class="inbox-list"></div>
+
+    <form id="inboxForm">
+      <label>
+        Customer name
+        <input id="inboxName" placeholder="Customer name" required maxlength="80">
+      </label>
+
+      <label>
+        Message
+        <textarea id="inboxMessage" placeholder="Customer message" required maxlength="1000"></textarea>
+      </label>
+
+      <label>
+        Reply
+        <textarea id="inboxReply" placeholder="Write a reply" maxlength="1000"></textarea>
+      </label>
+
+      <button class="button button-blue full-width">Save message & reply</button>
+    </form>
+
+    <button id="exportInbox" class="inbox-export">Export messages (.json)</button>
+  </section>
+
+  <!-- Website JavaScript -->
+  <script src="app.js"></script>
+  <script src="ai-assistant.js"></script>
+</body>
+</html>
