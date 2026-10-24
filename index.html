@@ -2,467 +2,2204 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0868e8">
-  <meta name="description" content="Shop stickers, stationery, cosmetics, fashion, bags, accessories and everyday lifestyle finds at Zivelle.">
-  <title>Zivelle — Little joys, Every day.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" href="assets/zivelle-logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <title>Zivelle — Little joys, Every day.</title>
+  <meta name="description" content="Discover lovely everyday essentials, accessories, bags and thoughtful gifts at Zivelle.">
+  <meta name="theme-color" content="#fff9f7">
+
+  <style>
+    :root {
+      --pink: #b66c7b;
+      --pink-dark: #914b5b;
+      --pink-light: #f8e8eb;
+      --cream: #fff9f7;
+      --ink: #35262b;
+      --muted: #817178;
+      --white: #ffffff;
+      --border: #f0e1e4;
+      --shadow: 0 10px 35px rgba(91, 48, 61, .08);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    .announcement {
+      padding: 8px 12px;
+      background: #f3dfe4;
+      color: #6d3948;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255, 249, 247, .96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      flex-shrink: 0;
+      color: var(--pink-dark);
+      font-family: Georgia, serif;
+      font-size: 31px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 1.15;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink-dark);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-button {
+      position: relative;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: white;
+      color: var(--ink);
+      font-size: 18px;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -4px;
+      min-width: 19px;
+      height: 19px;
+      padding: 0 4px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--pink);
+      color: white;
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      min-width: 42px;
+      min-height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: white;
+      font-size: 21px;
+    }
+
+    .hero {
+      padding: 38px 0 52px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 460px;
+      overflow: hidden;
+      border-radius: 28px;
+      background: #f6e7e8;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: clamp(25px, 5vw, 65px);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 30px;
+      background: white;
+      color: var(--pink-dark);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 20px 0 15px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(39px, 5.2vw, 65px);
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -1.8px;
+    }
+
+    .hero h1 em {
+      color: var(--pink-dark);
+      font-weight: 400;
+    }
+
+    .hero-copy > p {
+      max-width: 390px;
+      margin: 0;
+      color: #78666d;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 27px;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 21px;
+      border: 1px solid transparent;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      transition: transform .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--pink);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--pink-dark);
+    }
+
+    .btn-outline {
+      border-color: #e7cbd1;
+      background: rgba(255,255,255,.7);
+      color: var(--ink);
+    }
+
+    .hero-image {
+      min-height: 350px;
+      overflow: hidden;
+      background: #ead5d9;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      object-fit: cover;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding: 6px 0 60px;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: white;
+    }
+
+    .benefit-icon {
+      display: grid;
+      width: 43px;
+      height: 43px;
+      flex-shrink: 0;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--pink-light);
+      font-size: 20px;
+    }
+
+    .benefit strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .benefit span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .section {
+      padding: 45px 0 65px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      margin: 10px 0 5px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 4vw, 43px);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .text-link {
+      flex-shrink: 0;
+      padding-bottom: 5px;
+      color: var(--pink-dark);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .category-card {
+      position: relative;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 22px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(145deg, #f3dfe4, #fff4ef);
+      transition: transform .2s;
+    }
+
+    .category-card:nth-child(2) {
+      background: linear-gradient(145deg, #f0e5d7, #fff7ed);
+    }
+
+    .category-card:nth-child(3) {
+      background: linear-gradient(145deg, #e8e4ed, #f8f3fb);
+    }
+
+    .category-card:nth-child(4) {
+      background: linear-gradient(145deg, #e3ebe3, #f4faf1);
+    }
+
+    .category-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .category-emoji {
+      position: absolute;
+      top: 17px;
+      right: 19px;
+      font-size: 35px;
+    }
+
+    .category-card strong {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .category-card span:last-child {
+      margin-top: 4px;
+      color: #796970;
+      font-size: 11px;
+    }
+
+    .shop-section {
+      background: #fff4f1;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .search-wrap {
+      position: relative;
+      flex: 1 1 240px;
+    }
+
+    .search-wrap span {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+    }
+
+    .search-input,
+    .filter-select {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      outline: none;
+      background: white;
+      color: var(--ink);
+      font-size: 12px;
+    }
+
+    .search-input {
+      padding: 12px 15px 12px 43px;
+    }
+
+    .filter-select {
+      width: auto;
+      min-width: 145px;
+      padding: 10px 15px;
+    }
+
+    .search-input:focus,
+    .filter-select:focus {
+      border-color: var(--pink);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid #f0e2e3;
+      border-radius: 18px;
+      background: white;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-image {
+      position: relative;
+      aspect-ratio: 4 / 4.6;
+      overflow: hidden;
+      background: #f1e6e8;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.04);
+    }
+
+    .badge {
+      position: absolute;
+      top: 11px;
+      left: 11px;
+      padding: 5px 9px;
+      border-radius: 30px;
+      background: rgba(255,255,255,.94);
+      color: var(--pink-dark);
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-category {
+      margin: 0 0 5px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .product-name {
+      min-height: 44px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .product-description {
+      min-height: 34px;
+      margin: 6px 0 10px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .price-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .price {
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .old-price {
+      color: #a89ba0;
+      font-size: 11px;
+      text-decoration: line-through;
+    }
+
+    .product-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 7px;
+    }
+
+    .product-actions button {
+      min-height: 39px;
+      padding: 9px 11px;
+      border-radius: 25px;
+      font-size: 11px;
+    }
+
+    .add-button {
+      border: 0;
+      background: var(--pink);
+      color: white;
+      font-weight: 700;
+    }
+
+    .add-button:hover {
+      background: var(--pink-dark);
+    }
+
+    .buy-button {
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--ink);
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      padding: 45px 15px;
+      border-radius: 18px;
+      background: white;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .promo {
+      padding: 65px 0;
+    }
+
+    .promo-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      padding: clamp(25px, 5vw, 55px);
+      border-radius: 25px;
+      background: #f0dfe3;
+    }
+
+    .promo-box h2 {
+      max-width: 600px;
+      margin: 12px 0;
+      font-family: Georgia, serif;
+      font-size: clamp(29px, 4vw, 43px);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .promo-box p {
+      margin: 0;
+      color: #79656d;
+      font-size: 13px;
+    }
+
+    .newsletter {
+      padding: 45px 20px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: white;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      margin: 12px 0 8px;
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: 500;
+    }
+
+    .newsletter p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 430px;
+      gap: 8px;
+      margin: 20px auto 0;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      min-width: 0;
+      padding: 12px 15px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      outline: none;
+    }
+
+    .footer {
+      margin-top: 65px;
+      padding: 48px 0 22px;
+      background: #35272c;
+      color: white;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    .footer .brand {
+      display: inline-block;
+      color: #f1c8d0;
+    }
+
+    .footer p,
+    .footer a {
+      color: #e1d2d7;
+      font-size: 12px;
+    }
+
+    .footer h3 {
+      margin-top: 0;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: grid;
+      align-content: start;
+      gap: 10px;
+    }
+
+    .footer-bottom {
+      margin-top: 35px;
+      padding-top: 18px;
+      border-top: 1px solid #59464d;
+      color: #d4c3c9;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      visibility: hidden;
+      background: rgba(37, 22, 29, .45);
+      opacity: 0;
+      transition: .25s;
+    }
+
+    .overlay.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 60;
+      display: flex;
+      width: min(420px, 100%);
+      height: 100%;
+      flex-direction: column;
+      background: white;
+      box-shadow: -10px 0 35px rgba(0,0,0,.12);
+      transform: translateX(105%);
+      transition: transform .3s ease;
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .drawer-header h2 {
+      margin: 0;
+      font-family: Georgia, serif;
+      font-weight: 500;
+    }
+
+    .close-button {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: white;
+      font-size: 21px;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 18px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 72px 1fr auto;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-item img {
+      width: 72px;
+      height: 82px;
+      border-radius: 10px;
+      background: #f5e9eb;
+      object-fit: cover;
+    }
+
+    .cart-item h4 {
+      margin: 0 0 4px;
+      font-size: 13px;
+    }
+
+    .cart-item p {
+      margin: 0;
+      font-size: 12px;
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .quantity button {
+      width: 27px;
+      height: 27px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: white;
+    }
+
+    .remove-item {
+      align-self: start;
+      border: 0;
+      background: transparent;
+      color: var(--pink-dark);
+      font-size: 21px;
+    }
+
+    .drawer-footer {
+      padding: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .checkout-button {
+      width: 100%;
+      border: 0;
+      border-radius: 30px;
+      background: var(--pink);
+      color: white;
+      font-weight: 700;
+    }
+
+    .checkout-button:hover {
+      background: var(--pink-dark);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      z-index: 100;
+      width: max-content;
+      max-width: 90%;
+      padding: 12px 19px;
+      border-radius: 30px;
+      background: #35272c;
+      color: white;
+      font-size: 12px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 12px);
+      transition: .25s;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .chat-toggle {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      width: 55px;
+      height: 55px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--pink-dark);
+      color: white;
+      font-size: 23px;
+      box-shadow: var(--shadow);
+    }
+
+    .chat-panel {
+      position: fixed;
+      right: 18px;
+      bottom: 84px;
+      z-index: 40;
+      display: none;
+      width: min(350px, calc(100vw - 36px));
+      height: 420px;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .chat-panel.open {
+      display: flex;
+    }
+
+    .chat-header {
+      padding: 16px;
+      background: var(--pink-dark);
+      color: white;
+    }
+
+    .chat-header strong {
+      display: block;
+    }
+
+    .chat-header span {
+      font-size: 11px;
+      opacity: .85;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 14px;
+      background: #fff9f7;
+    }
+
+    .chat-message {
+      width: fit-content;
+      max-width: 86%;
+      margin-bottom: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: white;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .chat-message.user {
+      margin-left: auto;
+      background: var(--pink-light);
+    }
+
+    .chat-form {
+      display: flex;
+      gap: 7px;
+      padding: 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    .chat-form input {
+      width: 100%;
+      min-width: 0;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      outline: none;
+      font-size: 12px;
+    }
+
+    .chat-form button {
+      width: 43px;
+      height: 43px;
+      flex-shrink: 0;
+      border: 0;
+      border-radius: 50%;
+      background: var(--pink);
+      color: white;
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        gap: 15px;
+      }
+
+      .hero-grid {
+        min-height: 380px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .benefits {
+        gap: 10px;
+      }
+
+      .benefit {
+        padding: 13px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: 92%;
+      }
+
+      .announcement {
+        font-size: 10px;
+      }
+
+      .nav {
+        min-height: 70px;
+        gap: 10px;
+      }
+
+      .brand {
+        font-size: 25px;
+      }
+
+      .brand small {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 4%;
+        border-bottom: 1px solid var(--border);
+        background: var(--cream);
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        padding: 12px 6px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-right {
+        gap: 7px;
+      }
+
+      .icon-button {
+        min-width: 40px;
+        min-height: 40px;
+        padding: 8px;
+      }
+
+      .hero {
+        padding: 20px 0 30px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        border-radius: 22px;
+      }
+
+      .hero-copy {
+        padding: 29px 23px;
+      }
+
+      .hero h1 {
+        margin: 16px 0 12px;
+        font-size: clamp(39px, 11vw, 53px);
+      }
+
+      .hero-copy > p {
+        font-size: 13px;
+      }
+
+      .hero-image {
+        min-height: 240px;
+        max-height: 320px;
+      }
+
+      .hero-image img {
+        min-height: 240px;
+        max-height: 320px;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr;
+        gap: 9px;
+        padding-bottom: 25px;
+      }
+
+      .benefit {
+        padding: 12px 15px;
+      }
+
+      .benefit-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .section {
+        padding: 34px 0 40px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      .section-heading h2 {
+        font-size: 32px;
+      }
+
+      .section-heading p {
+        font-size: 12px;
+      }
+
+      .text-link {
+        margin-top: 16px;
+        font-size: 10px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+      }
+
+      .category-card {
+        min-height: 130px;
+        padding: 16px;
+      }
+
+      .category-card strong {
+        font-size: 18px;
+      }
+
+      .category-emoji {
+        top: 13px;
+        right: 14px;
+        font-size: 27px;
+      }
+
+      .shop-section {
+        padding-top: 35px;
+      }
+
+      .toolbar {
+        gap: 8px;
+      }
+
+      .search-wrap {
+        flex-basis: 100%;
+      }
+
+      .filter-select {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .product-card {
+        border-radius: 15px;
+      }
+
+      .product-image {
+        aspect-ratio: 4 / 4.5;
+      }
+
+      .product-info {
+        padding: 11px;
+      }
+
+      .product-name {
+        min-height: 40px;
+        font-size: 15px;
+      }
+
+      .product-description {
+        min-height: 34px;
+        font-size: 10px;
+      }
+
+      .price {
+        font-size: 15px;
+      }
+
+      .old-price {
+        font-size: 10px;
+      }
+
+      .product-actions {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .product-actions button {
+        min-height: 37px;
+      }
+
+      .promo {
+        padding: 38px 0;
+      }
+
+      .promo-box {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 27px 22px;
+      }
+
+      .promo-box h2 {
+        font-size: 31px;
+      }
+
+      .newsletter {
+        padding: 32px 17px;
+      }
+
+      .newsletter h2 {
+        font-size: 28px;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-form .btn {
+        width: 100%;
+      }
+
+      .footer {
+        margin-top: 40px;
+        padding-top: 36px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 15px;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+
+      .chat-toggle {
+        right: 13px;
+        bottom: 13px;
+        width: 51px;
+        height: 51px;
+      }
+
+      .chat-panel {
+        right: 12px;
+        bottom: 75px;
+        width: calc(100vw - 24px);
+        height: min(420px, 65dvh);
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand {
+        font-size: 22px;
+      }
+
+      .nav {
+        gap: 6px;
+      }
+
+      .product-grid {
+        gap: 8px;
+      }
+
+      .product-info {
+        padding: 9px;
+      }
+
+      .product-name {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+
   <div class="announcement">
-    💙 Little joys, Every day. &nbsp; | &nbsp; Welcome to Zivelle
+    ♡ Little joys, every day. &nbsp; | &nbsp; Welcome to Zivelle
   </div>
 
   <header class="header">
-    <a class="brand" href="#home" aria-label="Zivelle home">
-      <img src="assets/zivelle-logo.png" alt="Zivelle logo">
-      <span>
-        <b>Zivelle</b>
+    <div class="container nav">
+
+      <a href="#home" class="brand" aria-label="Zivelle home">
+        Zivelle
         <small>Little joys, Every day.</small>
-      </span>
-    </a>
+      </a>
 
-    <form class="search" id="searchForm">
-      <input id="searchInput" type="search" placeholder="Search your favourite finds…" aria-label="Search products">
-      <button aria-label="Search">⌕</button>
-    </form>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-    <div class="header-actions">
-      <a class="nav-link" href="#categories">Categories</a>
-      <button class="cart-button" id="openCart" aria-label="Open shopping cart">
-        🛍️ <span>Cart</span> <b id="cartCount">0</b>
-      </button>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+      <div class="nav-right">
+        <button class="icon-button" id="openCart" aria-label="Open shopping cart">
+          🛍️
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+          ☰
+        </button>
+      </div>
+
     </div>
   </header>
 
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="#categories">Categories</a>
-    <a href="#products">Shop all</a>
-    <a href="#about">About us</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <main>
+
     <section class="hero" id="home">
-      <img class="hero-art" src="assets/zivelle-shop-banner.png" alt="Zivelle lifestyle shop banner">
+      <div class="container">
 
-      <div class="hero-copy">
-        <span class="eyebrow">A LITTLE JOY, JUST FOR YOU</span>
-        <h1>Find your kind<br>of <em>happy.</em></h1>
+        <div class="hero-grid">
 
-        <p>Everyday essentials, cute finds and little things that make you smile.</p>
+          <div class="hero-copy">
+            <span class="eyebrow">A little joy, just for you</span>
 
-        <div class="hero-buttons">
-          <a class="button button-light" href="#products">
-            Shop the collection <span>→</span>
+            <h1>
+              Find your kind<br>
+              of <em>happy.</em>
+            </h1>
+
+            <p>
+              Everyday essentials, cute finds and little things
+              that make you smile. Discover something lovely
+              for yourself or someone special.
+            </p>
+
+            <div class="hero-buttons">
+              <a class="btn btn-primary" href="#shop">Shop the collection →</a>
+              <a class="btn btn-outline" href="#categories">Explore categories</a>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1100&q=85"
+              alt="Beautiful fashion and lifestyle collection"
+              fetchpriority="high"
+            >
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="container benefits" id="about">
+
+      <div class="benefit">
+        <div class="benefit-icon">♡</div>
+        <div>
+          <strong>Lovely Finds</strong>
+          <span>Little things, big joy</span>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">✧</div>
+        <div>
+          <strong>Easy Shopping</strong>
+          <span>Simple and convenient</span>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">♧</div>
+        <div>
+          <strong>Friendly Support</strong>
+          <span>We're here to help</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section" id="categories">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Find your favourites</span>
+            <h2>Shop by category</h2>
+            <p>Little discoveries for every part of your day.</p>
+          </div>
+
+          <a href="#shop" class="text-link">View all products →</a>
+        </div>
+
+        <div class="category-grid">
+
+          <a href="#shop" class="category-card" data-category="Accessories">
+            <span class="category-emoji">👜</span>
+            <strong>Accessories</strong>
+            <span>Little details, lovely style</span>
           </a>
-          <a class="text-button" href="#categories">Explore categories ↓</a>
-        </div>
 
-        <div class="hero-perks">
-          <span>♡ Thoughtful finds</span>
-          <span>✦ Everyday style</span>
-          <span>☻ Made for you</span>
+          <a href="#shop" class="category-card" data-category="Bags">
+            <span class="category-emoji">👝</span>
+            <strong>Bags</strong>
+            <span>Your everyday companion</span>
+          </a>
+
+          <a href="#shop" class="category-card" data-category="Gifts">
+            <span class="category-emoji">🎁</span>
+            <strong>Gifts</strong>
+            <span>Made for special moments</span>
+          </a>
+
+          <a href="#shop" class="category-card" data-category="Lifestyle">
+            <span class="category-emoji">🌷</span>
+            <strong>Lifestyle</strong>
+            <span>Make every day special</span>
+          </a>
+
         </div>
       </div>
     </section>
 
-    <section class="trust-row" aria-label="Shop highlights">
-      <div>
-        <span>✿</span>
-        <p><b>Lovely Finds</b><small>Little things, big joy</small></p>
-      </div>
+    <section class="section shop-section" id="shop">
+      <div class="container">
 
-      <div>
-        <span>♡</span>
-        <p><b>Easy Ordering</b><small>Simple and convenient</small></p>
-      </div>
-
-      <div>
-        <span>↗</span>
-        <p><b>Friendly Support</b><small>Here to help you</small></p>
-      </div>
-
-      <div>
-        <span>▣</span>
-        <p><b>Careful Packing</b><small>Every order matters</small></p>
-      </div>
-    </section>
-
-    <section class="section categories-section" id="categories">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow blue">FIND YOUR FAVOURITE</span>
-          <h2>Shop by category</h2>
-          <p>Little discoveries for every part of your day.</p>
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Say hello to your new favourites</span>
+            <h2>Little things to love</h2>
+            <p>Browse the collection and find your next favourite.</p>
+          </div>
         </div>
 
-        <a href="#products" class="under-link">View all products ↗</a>
-      </div>
+        <div class="toolbar">
 
-      <div class="category-grid" id="categoryGrid"></div>
-    </section>
+          <div class="search-wrap">
+            <span>⌕</span>
+            <input
+              type="search"
+              id="productSearch"
+              class="search-input"
+              placeholder="Search your favourite finds..."
+              aria-label="Search products"
+            >
+          </div>
 
-    <section class="section products-section" id="products">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow blue">THE ZIVELLE EDIT</span>
-          <h2>Little things to love</h2>
-          <p>Browse the collection and find your next favourite.</p>
-        </div>
-
-        <div class="product-controls">
-          <select id="categoryFilter" aria-label="Filter by category">
-            <option value="all">All categories</option>
+          <select id="categoryFilter" class="filter-select" aria-label="Filter by category">
+            <option value="All">All categories</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Bags">Bags</option>
+            <option value="Gifts">Gifts</option>
+            <option value="Lifestyle">Lifestyle</option>
           </select>
 
-          <select id="sortSelect" aria-label="Sort products">
+          <select id="sortFilter" class="filter-select" aria-label="Sort products">
             <option value="featured">Featured</option>
-            <option value="price-low">Price: low to high</option>
-            <option value="price-high">Price: high to low</option>
-            <option value="name">Name: A–Z</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+            <option value="name">Name: A to Z</option>
           </select>
+
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <div class="empty-state">Loading lovely finds...</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="promo">
+      <div class="container">
+        <div class="promo-box">
+          <div>
+            <span class="eyebrow">A little something special</span>
+            <h2>Small things.<br>Big happy moments.</h2>
+            <p>Find thoughtful gifts and everyday favourites at Zivelle.</p>
+          </div>
+
+          <a href="#shop" class="btn btn-primary">Explore the collection →</a>
         </div>
       </div>
+    </section>
 
-      <div class="results-note" id="resultsNote"></div>
-      <div class="product-grid" id="productGrid"></div>
+    <section class="container">
+      <div class="newsletter">
+        <span class="eyebrow">Stay in the loop</span>
+        <h2>A little love in your inbox.</h2>
+        <p>Enter your email to show your interest in Zivelle updates.</p>
 
-      <div class="empty-state" id="emptyState" hidden>
-        <span>🔎</span>
-        <h3>No products found</h3>
-        <p>Try another search or category.</p>
-        <button class="button button-blue" id="clearFilters">Clear filters</button>
+        <form class="newsletter-form" id="newsletterForm">
+          <input
+            type="email"
+            id="newsletterEmail"
+            placeholder="Your email address"
+            aria-label="Your email address"
+            required
+          >
+          <button class="btn btn-primary" type="submit">Count me in</button>
+        </form>
       </div>
     </section>
 
-    <section class="feature-banner">
-      <div class="feature-icon">♡</div>
-
-      <div>
-        <span class="eyebrow">YOUR EVERYDAY HAPPY PLACE</span>
-        <h2>Small things. <em>Big smiles.</em></h2>
-        <p>From cute stationery to everyday style, discover little joys worth sharing.</p>
-      </div>
-
-      <a href="#products" class="button button-white">Find your joy →</a>
-
-      <span class="feature-spark spark-one">✦</span>
-      <span class="feature-spark spark-two">✿</span>
-    </section>
-
-    <section class="section about-section" id="about">
-      <div class="about-image">
-        <img src="assets/zivelle-merch-mockup.png" alt="Zivelle branded lifestyle merchandise">
-      </div>
-
-      <div class="about-copy">
-        <span class="eyebrow blue">A LITTLE ABOUT US</span>
-        <h2>More than shopping.<br><em>It's a little joy.</em></h2>
-
-        <p>
-          At Zivelle, we believe everyday life deserves a little extra colour.
-          We're bringing together cute finds, useful essentials and lifestyle
-          favourites in one happy place.
-        </p>
-
-        <p>
-          From stickers and stationery to cosmetics, fashion, bags and
-          accessories—there's a little something for your everyday.
-        </p>
-
-        <a href="#products" class="under-link">Explore Zivelle ↗</a>
-      </div>
-    </section>
-
-    <section class="newsletter">
-      <div>
-        <span class="eyebrow">STAY IN THE LOOP</span>
-        <h2>A little joy in your inbox.</h2>
-        <p>Get in touch to hear about new arrivals and shop updates.</p>
-      </div>
-
-      <a class="button button-white" href="#contact">Let's connect →</a>
-    </section>
-
-    <section class="section contact-section" id="contact">
-      <div>
-        <span class="eyebrow blue">WE'RE HERE FOR YOU</span>
-        <h2>Let's talk, Zivelle style.</h2>
-        <p>Questions about a product or your order? Reach out—we'd love to help.</p>
-      </div>
-
-      <div class="contact-cards">
-        <a href="#" id="whatsappContact" class="contact-card">
-          <span>☏</span>
-          <div>
-            <b>WhatsApp us</b>
-            <small>Ask a question or place an order</small>
-          </div>
-          <strong>↗</strong>
-        </a>
-
-        <a href="mailto:hello@zivelle.com" class="contact-card">
-          <span>✉</span>
-          <div>
-            <b>Email us</b>
-            <small>hello@zivelle.com — replace with your email</small>
-          </div>
-          <strong>↗</strong>
-        </a>
-      </div>
-    </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-main">
-      <a class="brand footer-brand" href="#home">
-        <img src="assets/zivelle-logo.png" alt="">
-        <span>
-          <b>Zivelle</b>
-          <small>Little joys, Every day.</small>
-        </span>
-      </a>
+  <footer class="footer" id="contact">
+    <div class="container">
 
-      <p>Little joys for your everyday life. Find your next favourite with Zivelle. 💙</p>
+      <div class="footer-grid">
 
-      <div class="social-links">
-        <a href="#" aria-label="Facebook" id="facebookLink">f</a>
-        <a href="#contact" aria-label="Contact">✉</a>
-        <a href="#products" aria-label="Shop">♡</a>
+        <div class="footer-about">
+          <a href="#home" class="brand">
+            Zivelle
+            <small>Little joys, Every day.</small>
+          </a>
+
+          <p>
+            Lovely finds, thoughtful gifts and everyday essentials
+            to bring a little happiness to your day.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Explore</h3>
+          <a href="#home">Home</a>
+          <a href="#categories">Categories</a>
+          <a href="#shop">Shop all</a>
+          <a href="#about">About Zivelle</a>
+        </div>
+
+        <div class="footer-links">
+          <h3>Need help?</h3>
+          <a href="#contact" id="footerContact">Contact us</a>
+          <a href="#shop">Browse products</a>
+          <a href="#home">Back to top ↑</a>
+        </div>
+
       </div>
-    </div>
 
-    <div class="footer-links">
-      <b>Explore</b>
-      <a href="#products">Shop all</a>
-      <a href="#categories">Categories</a>
-      <a href="#about">Our story</a>
-    </div>
+      <div class="footer-bottom">
+        © <span id="currentYear"></span> Zivelle. Little joys, Every day.
+      </div>
 
-    <div class="footer-links">
-      <b>Customer care</b>
-      <a href="#contact">Contact us</a>
-      <a href="#faq">FAQs</a>
-      <a href="#policies">Delivery & returns</a>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© <span id="year"></span> Zivelle. All little joys reserved.</span>
-      <span>Made with ♡ for everyday happiness.</span>
     </div>
   </footer>
 
-  <section class="faq-policy section" id="faq">
-    <details>
-      <summary>How do I place an order?</summary>
-      <p>Add your favourite products to the cart, fill in your details, then send the order through WhatsApp.</p>
-    </details>
+  <div class="overlay" id="overlay"></div>
 
-    <details>
-      <summary>How can I confirm product availability?</summary>
-      <p>Message us on WhatsApp before ordering if you need to confirm size, colour or stock.</p>
-    </details>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
 
-    <details id="policies">
-      <summary>What about delivery and returns?</summary>
-      <p>Delivery fees, delivery time and return terms should be confirmed with the shop before purchase. Add your final policy here before launching.</p>
-    </details>
-  </section>
-
-  <!-- Shopping Cart -->
-  <div class="cart-overlay" id="cartOverlay"></div>
-
-  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
-    <div class="cart-head">
-      <div>
-        <span class="eyebrow blue">YOUR BAG</span>
-        <h2>Shopping cart <span id="cartTitleCount">(0)</span></h2>
-      </div>
-
-      <button id="closeCart" class="icon-button" aria-label="Close cart">✕</button>
+    <div class="drawer-header">
+      <h2>Your shopping bag</h2>
+      <button class="close-button" id="closeCart" aria-label="Close cart">×</button>
     </div>
 
-    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-items" id="cartItems"></div>
 
-    <div class="cart-bottom">
-      <div class="subtotal">
+    <div class="drawer-footer">
+      <div class="total-row">
         <span>Subtotal</span>
-        <b id="cartSubtotal">৳0</b>
+        <span id="cartTotal">৳0</span>
       </div>
 
-      <small>Delivery fee, if any, will be confirmed before dispatch.</small>
-
-      <button class="button button-blue full-width" id="checkoutButton">
-        Continue to checkout →
+      <button class="btn checkout-button" id="checkoutButton">
+        Order via WhatsApp
       </button>
 
-      <button class="continue-shopping" id="continueShopping">Continue shopping</button>
+      <p style="color:#817178;font-size:10px;text-align:center">
+        Delivery charges, if any, will be confirmed separately.
+      </p>
     </div>
+
   </aside>
 
-  <!-- Checkout Form -->
-  <div class="modal-backdrop" id="checkoutModal" aria-hidden="true">
-    <div class="checkout-modal">
-      <div class="modal-head">
-        <div>
-          <span class="eyebrow blue">ALMOST YOURS</span>
-          <h2>Checkout details</h2>
-        </div>
-
-        <button class="icon-button" id="closeCheckout" aria-label="Close checkout">✕</button>
-      </div>
-
-      <p class="modal-intro">Add your details. We'll prepare your order message for WhatsApp.</p>
-
-      <form id="checkoutForm">
-        <label>
-          Full name
-          <input name="name" required autocomplete="name" placeholder="Your name">
-        </label>
-
-        <label>
-          Mobile number
-          <input
-            name="phone"
-            type="tel"
-            required
-            autocomplete="tel"
-            placeholder="01XXXXXXXXX"
-            pattern="[0-9+ ()-]{8,18}"
-          >
-        </label>
-
-        <label>
-          Delivery address
-          <textarea
-            name="address"
-            required
-            autocomplete="street-address"
-            rows="3"
-            placeholder="House, road, area, district"
-          ></textarea>
-        </label>
-
-        <label>
-          Order note <small>(optional)</small>
-          <textarea name="note" rows="2" placeholder="Size, colour or other requests"></textarea>
-        </label>
-
-        <div class="checkout-total">
-          <span>Order subtotal</span>
-          <b id="checkoutTotal">৳0</b>
-        </div>
-
-        <button class="button button-blue full-width" type="submit">
-          Send order via WhatsApp ↗
-        </button>
-
-        <p class="form-note">Your order is not confirmed until the shop replies.</p>
-      </form>
-    </div>
-  </div>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <!-- Zivelle Chatbot Demo -->
-  <button class="zivelle-chat-launch" id="chatLaunch" aria-label="Open Zivelle assistant">
-    💬 <span>Ask Zivelle</span>
+  <button class="chat-toggle" id="chatToggle" aria-label="Open customer assistant" aria-expanded="false">
+    ♡
   </button>
 
-  <section class="zivelle-chat" id="zivelleChat" aria-label="Zivelle customer assistant" hidden>
-    <header class="zchat-head">
-      <div class="zchat-avatar">Z</div>
+  <section class="chat-panel" id="chatPanel" aria-label="Zivelle customer assistant">
 
-      <div>
-        <b>Zivelle Assistant</b>
-        <small>Quick help • Usually replies instantly</small>
-      </div>
-
-      <button id="chatClose" aria-label="Close chat">×</button>
-    </header>
-
-    <div class="zchat-notice">
-      Hi there! 💙 I can help with products, prices, delivery and ordering.
+    <div class="chat-header">
+      <strong>Zivelle Assistant 🌸</strong>
+      <span>How can we help you?</span>
     </div>
 
-    <div class="zchat-messages" id="zchatMessages" aria-live="polite">
-      <div class="zchat-bubble bot">
-        Welcome to Zivelle! What would you like to know?
-      </div>
-    </div>
+    <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
 
-    <div class="zchat-quick">
-      <button data-quick="What products do you sell?">Products</button>
-      <button data-quick="How do I order?">How to order</button>
-      <button data-quick="Tell me about delivery">Delivery</button>
-    </div>
-
-    <form id="zchatForm" class="zchat-form">
+    <form class="chat-form" id="chatForm">
       <input
-        id="zchatInput"
-        placeholder="Type your message…"
-        maxlength="500"
+        type="text"
+        id="chatInput"
+        placeholder="Type your message..."
+        aria-label="Type your message"
         autocomplete="off"
         required
       >
-      <button aria-label="Send message">➤</button>
+      <button type="submit" aria-label="Send message">➤</button>
     </form>
 
-    <div class="zchat-foot">
-      Automated demo assistant · Connect an AI API for live AI replies
-    </div>
   </section>
 
-  <!-- Local Message & Reply Demo -->
-  <button class="zivelle-inbox-launch" id="inboxLaunch">
-    ✉ Message & Reply <span id="inboxUnread">0</span>
-  </button>
+  <div class="toast" id="toast" role="status"></div>
 
-  <section class="zivelle-inbox" id="zivelleInbox" hidden>
-    <header>
-      <b>Message Reply Center</b>
-      <button id="inboxClose" aria-label="Close inbox">×</button>
-    </header>
+  <script>
+    "use strict";
 
-    <p class="inbox-sub">
-      Customer messages on this browser are saved locally.
-      This is a demo inbox, not a live Facebook/Instagram inbox.
-    </p>
+    /*
+      ZIVELLE SHOP SETTINGS
 
-    <div id="inboxList" class="inbox-list"></div>
+      Before accepting orders:
+      1. Replace whatsappNumber with your business WhatsApp number.
+      2. Replace demo product details and prices with your real products.
+      3. Product changes in this file are not shared-admin changes.
+    */
 
-    <form id="inboxForm">
-      <label>
-        Customer name
-        <input id="inboxName" placeholder="Customer name" required maxlength="80">
-      </label>
+    const ZIVELLE = {
+      whatsappNumber: "",
+      currency: "৳"
+    };
 
-      <label>
-        Message
-        <textarea id="inboxMessage" placeholder="Customer message" required maxlength="1000"></textarea>
-      </label>
+    const products = [
+      {
+        id: 1,
+        name: "Elegant Everyday Bag",
+        category: "Accessories",
+        price: 1250,
+        oldPrice: 1500,
+        badge: "Popular",
+        description: "A lovely bag for your everyday style.",
+        image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 2,
+        name: "Minimalist Watch",
+        category: "Accessories",
+        price: 1650,
+        oldPrice: 1950,
+        badge: "Trending",
+        description: "A timeless touch for your look.",
+        image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 3,
+        name: "Premium Gift Box",
+        category: "Gifts",
+        price: 850,
+        oldPrice: 1000,
+        badge: "Gift pick",
+        description: "A thoughtful gift for someone special.",
+        image: "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 4,
+        name: "Daily Essentials",
+        category: "Lifestyle",
+        price: 950,
+        oldPrice: 1150,
+        badge: "New",
+        description: "Little essentials for daily life.",
+        image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 5,
+        name: "Chic Mini Purse",
+        category: "Bags",
+        price: 750,
+        oldPrice: 900,
+        badge: "",
+        description: "Compact, practical and lovely.",
+        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 6,
+        name: "Cute Desk Decor",
+        category: "Lifestyle",
+        price: 550,
+        oldPrice: 650,
+        badge: "",
+        description: "Make your workspace feel special.",
+        image: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 7,
+        name: "Special Gift Hamper",
+        category: "Gifts",
+        price: 1450,
+        oldPrice: 1700,
+        badge: "Special",
+        description: "A little happiness, beautifully packed.",
+        image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 8,
+        name: "Everyday Tote Bag",
+        category: "Bags",
+        price: 690,
+        oldPrice: 850,
+        badge: "",
+        description: "Your easy companion for busy days.",
+        image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=700&q=80"
+      }
+    ];
 
-      <label>
-        Reply
-        <textarea id="inboxReply" placeholder="Write a reply" maxlength="1000"></textarea>
-      </label>
+    const CART_KEY = "zivelle_cart_v2";
 
-      <button class="button button-blue full-width">Save message & reply</button>
-    </form>
+    let cart = loadCart();
+    let activeCategory = "All";
+    let searchTerm = "";
+    let sortMode = "featured";
 
-    <button id="exportInbox" class="inbox-export">Export messages (.json)</button>
-  </section>
+    const $ = id => document.getElementById(id);
 
-  <!-- Website JavaScript -->
-  <script src="app.js"></script>
-  <script src="ai-assistant.js"></script>
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      })[char]);
+    }
+
+    function money(amount) {
+      return ZIVELLE.currency + Number(amount || 0).toLocaleString("en-BD");
+    }
+
+    function loadCart() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+
+        if (!Array.isArray(saved)) return [];
+
+        return saved
+          .filter(item =>
+            Number.isInteger(Number(item.id)) &&
+            Number.isInteger(Number(item.quantity)) &&
+            Number(item.quantity) > 0 &&
+            products.some(product => product.id === Number(item.id))
+          )
+          .map(item => ({
+            id: Number(item.id),
+            quantity: Math.min(Number(item.quantity), 99)
+          }));
+      } catch {
+        return [];
+      }
+    }
+
+    function saveCart() {
+      try {
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+      } catch {
+        showToast("Cart could not be saved in this browser.");
+      }
+    }
+
+    function showToast(message) {
+      const toast = $("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      clearTimeout(showToast.timer);
+
+      showToast.timer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2600);
+    }
+
+    function renderProducts() {
+      const grid = $("productGrid");
+
+      let list = products.filter(product => {
+        const matchesCategory =
+          activeCategory === "All" ||
+          product.category === activeCategory;
+
+        const searchable = (
+          product.name + " " +
+          product.category + " " +
+          product.description
+        ).toLowerCase();
+
+        return matchesCategory &&
+          searchable.includes(searchTerm.toLowerCase());
+      });
+
+      if (sortMode === "low") {
+        list.sort((a, b) => a.price - b.price);
+      } else if (sortMode === "high") {
+        list.sort((a, b) => b.price - a.price);
+      } else if (sortMode === "name") {
+        list.sort((a, b) => a.name.localeCompare(b.name));
+      }
+
+      if (!list.length) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <h3>No products found</h3>
+            <p>Try another search or category.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = list.map(product => `
+        <article class="product-card">
+
+          <div class="product-image">
+            <img
+              src="${escapeHTML(product.image)}"
+              alt="${escapeHTML(product.name)}"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x700/f4e6e8/8c5360?text=Zivelle';"
+            >
+
+            ${product.badge ? `
+              <span class="badge">${escapeHTML(product.badge)}</span>
+            ` : ""}
+          </div>
+
+          <div class="product-info">
+            <p class="product-category">${escapeHTML(product.category)}</p>
+
+            <h3 class="product-name">${escapeHTML(product.name)}</h3>
+
+            <p class="product-description">${escapeHTML(product.description)}</p>
+
+            <div class="price-row">
+              <span class="price">${money(product.price)}</span>
+              ${product.oldPrice ? `
+                <span class="old-price">${money(product.oldPrice)}</span>
+              ` : ""}
+            </div>
+
+            <div class="product-actions">
+              <button
+                class="add-button"
+                type="button"
+                data-add="${product.id}"
+              >Add to cart</button>
+
+              <button
+                class="buy-button"
+                type="button"
+                data-buy="${product.id}"
+              >Buy now</button>
+            </div>
+          </div>
+
+        </article>
+      `).join("");
+    }
+
+    function renderCart() {
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+      const total = cart.reduce((sum, item) => {
+        const product = products.find(p => p.id === item.id);
+        return sum + (product ? product.price * item.quantity : 0);
+      }, 0);
+
+      $("cartCount").textContent = count;
+      $("cartTotal").textContent = money(total);
+
+      const itemsElement = $("cartItems");
+
+      if (!cart.length) {
+        itemsElement.innerHTML = `
+          <div class="empty-state">
+            <h3>Your bag is waiting ♡</h3>
+            <p>Add something lovely from our collection.</p>
+          </div>
+        `;
+        return;
+      }
+
+      itemsElement.innerHTML = cart.map(item => {
+        const product = products.find(p => p.id === item.id);
+
+        if (!product) return "";
+
+        return `
+          <div class="cart-item">
+
+            <img
+              src="${escapeHTML(product.image)}"
+              alt="${escapeHTML(product.name)}"
+              onerror="this.onerror=null;this.src='https://placehold.co/100x120/f4e6e8/8c5360?text=Z';"
+            >
+
+            <div>
+              <h4>${escapeHTML(product.name)}</h4>
+              <p>${money(product.price)}</p>
+
+              <div class="quantity">
+                <button type="button" data-minus="${product.id}" aria-label="Decrease quantity">−</button>
+                <span>${item.quantity}</span>
+                <button type="button" data-plus="${product.id}" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="remove-item"
+              data-remove="${product.id}"
+              aria-label="Remove product"
+            >×</button>
+
+          </div>
+        `;
+      }).join("");
+    }
+
+    function addToCart(id) {
+      const product = products.find(p => p.id === Number(id));
+
+      if (!product) return;
+
+      const existing = cart.find(item => item.id === product.id);
+
+      if (existing) {
+        if (existing.quantity >= 99) {
+          showToast("Maximum quantity reached.");
+          return;
+        }
+
+        existing.quantity++;
+      } else {
+        cart.push({ id: product.id, quantity: 1 });
+      }
+
+      saveCart();
+      renderCart();
+      showToast(product.name + " added to your bag ♡");
+    }
+
+    function changeQuantity(id, amount) {
+      const item = cart.find(entry => entry.id === Number(id));
+
+      if (!item) return;
+
+      item.quantity += amount;
+
+      if (item.quantity <= 0) {
+        cart = cart.filter(entry => entry.id !== Number(id));
+      }
+
+      if (item.quantity > 99) item.quantity = 99;
+
+      saveCart();
+      renderCart();
+    }
+
+    function removeItem(id) {
+      cart = cart.filter(item => item.id !== Number(id));
+      saveCart();
+      renderCart();
+      showToast("Item removed from your bag.");
+    }
+
+    function openCart() {
+      $("cartDrawer").classList.add("open");
+      $("overlay").classList.add("show");
+      document.body.classList.add("no-scroll");
+    }
+
+    function closeCart() {
+      $("cartDrawer").classList.remove("open");
+      $("overlay").classList.remove("show");
+      document.body.classList.remove("no-scroll");
+    }
+
+    function checkout() {
+      if (!cart.length) {
+        showToast("Your shopping bag is empty.");
+        return;
+      }
+
+      const phone = ZIVELLE.whatsappNumber.replace(/\D/g, "");
+
+      if (!phone) {
+        showToast("WhatsApp is not configured yet. Please set the number in index.html.");
+        return;
+      }
+
+      let total = 0;
+
+      const lines = [
+        "Hello Zivelle! I would like to place an order.",
+        "",
+        "My order:"
+      ];
+
+      cart.forEach(item => {
+        const product = products.find(p => p.id === item.id);
+
+        if (!product) return;
+
+        const subtotal = product.price * item.quantity;
+        total += subtotal;
+
+        lines.push(
+          `${product.name} x ${item.quantity} = ${money(subtotal)}`
+        );
+      });
+
+      lines.push("");
+      lines.push("Total: " + money(total));
+      lines.push("");
+      lines.push("Please confirm product availability and delivery charges.");
+      lines.push("Customer name:");
+      lines.push("Delivery address:");
+
+      const url =
+        "https://wa.me/" + phone +
+        "?text=" + encodeURIComponent(lines.join("\n"));
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    function filterCategory(category) {
+      activeCategory = category || "All";
+      $("categoryFilter").value = activeCategory;
+      renderProducts();
+
+      $("shop").scrollIntoView({ behavior: "smooth" });
+    }
+
+    $("productSearch").addEventListener("input", event => {
+      searchTerm = event.target.value.trim();
+      renderProducts();
+    });
+
+    $("categoryFilter").addEventListener("change", event => {
+      activeCategory = event.target.value;
+      renderProducts();
+    });
+
+    $("sortFilter").addEventListener("change", event => {
+      sortMode = event.target.value;
+      renderProducts();
+    });
+
+    document.addEventListener("click", event => {
+      const button = event.target.closest("button, a");
+
+      if (!button) return;
+
+      if (button.dataset.add) {
+        addToCart(button.dataset.add);
+      }
+
+      if (button.dataset.buy) {
+        addToCart(button.dataset.buy);
+        openCart();
+      }
+
+      if (button.dataset.plus) {
+        changeQuantity(button.dataset.plus, 1);
+      }
+
+      if (button.dataset.minus) {
+        changeQuantity(button.dataset.minus, -1);
+      }
+
+      if (button.dataset.remove) {
+        removeItem(button.dataset.remove);
+      }
+
+      if (button.dataset.category) {
+        event.preventDefault();
+        filterCategory(button.dataset.category);
+      }
+    });
+
+    $("openCart").addEventListener("click", openCart);
+    $("closeCart").addEventListener("click", closeCart);
+    $("overlay").addEventListener("click", closeCart);
+    $("checkoutButton").addEventListener("click", checkout);
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeCart();
+        $("chatPanel").classList.remove("open");
+        $("chatToggle").setAttribute("aria-expanded", "false");
+      }
+    });
+
+    $("menuToggle").addEventListener("click", () => {
+      $("navLinks").classList.toggle("open");
+    });
+
+    document.querySelectorAll("#navLinks a").forEach(link => {
+      link.addEventListener("click", () => {
+        $("navLinks").classList.remove("open");
+      });
+    });
+
+    $("newsletterForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      showToast("Thank you for your interest in Zivelle! ♡");
+      event.target.reset();
+    });
+
+    $("currentYear").textContent = new Date().getFullYear();
+
+    // Simple demo assistant. This is not a real AI service.
+    const chatToggle = $("chatToggle");
+    const chatPanel = $("chatPanel");
+    const chatForm = $("chatForm");
+    const chatInput = $("chatInput");
+    const chatMessages = $("chatMessages");
+
+    function addChatMessage(message, sender) {
+      const bubble = document.createElement("div");
+      bubble.className = "chat-message " + sender;
+      bubble.textContent = message;
+      chatMessages.appendChild(bubble);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function assistantReply(message) {
+      const text = message.toLowerCase();
+
+      if (/hello|hi\b|hey|হ্যালো|হাই|আসসালামু/.test(text)) {
+        return "Hello! Welcome to Zivelle 🌸 How can I help you?";
+      }
+
+      if (/price|দাম|মূল্য|টাকা/.test(text)) {
+        return "পণ্যের দাম জানতে Shop section দেখুন। প্রতিটি পণ্যের বর্তমান প্রদর্শিত দাম সেখানে আছে।";
+      }
+
+      if (/delivery|ডেলিভারি|কুরিয়ার|কুরিয়ার/.test(text)) {
+        return "ডেলিভারি চার্জ ও সময় নিশ্চিত করতে অর্ডারের আগে Zivelle-এর সঙ্গে যোগাযোগ করুন।";
+      }
+
+      if (/order|অর্ডার|buy|কিনতে/.test(text)) {
+        return "পণ্যটি কার্টে যোগ করে Order via WhatsApp বাটন ব্যবহার করুন। আগে WhatsApp নম্বর সেট করা প্রয়োজন।";
+      }
+
+      if (/return|refund|exchange|ফেরত|বদল/.test(text)) {
+        return "পণ্য ফেরত বা পরিবর্তনের নিয়ম জানতে Zivelle Customer Support-এর সঙ্গে যোগাযোগ করুন।";
+      }
+
+      if (/thank|ধন্যবাদ/.test(text)) {
+        return "You're welcome! Thank you for visiting Zivelle. ♡";
+      }
+
+      return "আপনার মেসেজের জন্য ধন্যবাদ! 🌷 পণ্য, দাম অথবা অর্ডার সম্পর্কে প্রশ্নটি আরেকটু বিস্তারিত লিখুন।";
+    }
+
+    chatToggle.addEventListener("click", () => {
+      const opened = chatPanel.classList.toggle("open");
+
+      chatToggle.setAttribute("aria-expanded", String(opened));
+
+      if (opened && chatMessages.children.length === 0) {
+        addChatMessage(
+          "Hello! Welcome to Zivelle 🌸 আপনার কী সাহায্য প্রয়োজন?",
+          "bot"
+        );
+      }
+
+      if (opened) chatInput.focus();
+    });
+
+    chatForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const message = chatInput.value.trim();
+
+      if (!message) return;
+
+      addChatMessage(message, "user");
+      chatInput.value = "";
+
+      setTimeout(() => {
+        addChatMessage(assistantReply(message), "bot");
+      }, 350);
+    });
+
+    renderProducts();
+    renderCart();
+  </script>
+
 </body>
 </html>
